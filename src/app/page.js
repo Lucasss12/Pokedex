@@ -71,22 +71,29 @@ export default function Home() {
     <main>
       <Searchbar />
       {pokemonData === null ? (
-        <div>Loading...</div> // Affiche l'indicateur de chargement lorsque isLoading est vrai
+        <div>Chargement du pokedex...</div>
       ) : (
-        pokemonData.map((pokemon, index) => (
-          <div key={index}>
-            <div className={`h-72 w-56 ${getTypeClass(pokemon.types[0].name)} border border-fuchsia-500 p-5 pt-0`}>
-              <Image className='border border-y-amber-300' src={pokemon.sprites.regular} alt={pokemon.name.fr}  width={500} height={500}/>
-              <h1 className='flex justify-start text-l font-semibold mb-3'>no. {pokemon.pokedexId}</h1> 
-              <h1 className='flex justify-start text-xl font-semibold'>{pokemon.name.fr}</h1>
-              <div className='flex justify-start'> {/* Utilisation d'une div pour afficher les types côte à côte */}
-                {pokemon.types.map((pokemonType, index) => (
-                  <h1 key={index} className='text-xl font-semibold mr-1'>{pokemonType.name}</h1>
-                ))}
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        {pokemonData.map((pokemon, index) => (
+          <div key={index} className='flex justify-center py-4 sm:py-8 rounded-lg'>
+            <div className={`h-72 w-56 sm:w-72 md:w-96 rounded-md p-3 sm:p-5 pt-0`}>
+              <Image className='bg-stone-200 rounded-lg' src={pokemon.sprites.regular} alt={pokemon.name.fr} width={500} height={500} />
+              <div className='pl-2'>
+                <h1 className='flex justify-start text-sm sm:text-l mb-2 sm:mb-3 text-gray-500'>no. {pokemon.pokedexId}</h1>
+                <h1 className='flex justify-start text-lg sm:text-xl font-semibold mb-1'>{pokemon.name.fr}</h1>
+                <div className='flex justify-start'>
+                  {pokemon.types.map((pokemonType, index) => (
+                    <div key={index}>
+                      <h1 className={`text-sm sm:text-l mr-1 h-6 w-16 rounded-sm text-center ${getTypeClass(pokemonType.name)}`}>{pokemonType.name}</h1>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        ))
+        ))}
+      </div>
+      
       )}
     </main>
   )
