@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image'
 import Searchbar from '../app/component/searchbar/searchbar'
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -32,7 +33,7 @@ export default function Home() {
         return 'bg-yellow-400'
       case 'Normal':
         return 'bg-gray-400'
-      case 'Electrik':
+      case 'Électrik':
         return 'bg-yellow-300'
       case 'Poison':
         return 'bg-purple-400'
@@ -41,21 +42,21 @@ export default function Home() {
       case 'Vol':
         return 'bg-blue-200'
       case 'Combat':
-        return 'bg-red-600'
+        return 'bg-red-600 text-white' 
       case 'Psy':
-        return 'bg-purple-500'
+        return 'bg-purple-500 text-white'
       case 'Sol':
         return 'bg-yellow-600'
       case 'Roche':
         return 'bg-yellow-500'
       case 'Spectre':
-        return 'bg-purple-600'
+        return 'bg-purple-600 text-white'
       case 'Dragon':
-        return 'bg-red-800'
+        return 'bg-red-800 text-white'
       case 'Ténèbres':
         return 'bg-gray-800'
       case 'Acier':
-        return 'bg-gray-600'
+        return 'bg-gray-600 text-white'
       case 'Glace':
         return 'bg-blue-300'
       default:
@@ -76,15 +77,15 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {pokemonData.map((pokemon, index) => (
           <div key={index} className='flex justify-center py-4 sm:py-8 rounded-lg'>
-            <div className={`h-72 w-56 sm:w-72 md:w-96 rounded-md p-3 sm:p-5 pt-0`}>
-              <Image className='bg-stone-200 rounded-lg' src={pokemon.sprites.regular} alt={pokemon.name.fr} width={500} height={500} />
+            <div className={`h-72 w-56 sm:w-72 md:w-96 rounded-md p-3 sm:p-5 pt-0  hover:scale-110 transform transition-transform duration-300`}>
+              <Link href={`/pokemon/${index +1}`}> <Image className='bg-stone-100 rounded-lg' src={pokemon.sprites.regular} alt={pokemon.name.fr} width={500} height={500} /> </Link>
               <div className='pl-2'>
-                <h1 className='flex justify-start text-sm sm:text-l mb-2 sm:mb-3 text-gray-500'>no. {pokemon.pokedexId}</h1>
+                <h1 className='flex justify-start text-sm sm:text-l mb-2 sm:mb-3 text-gray-600'>no. {pokemon.pokedexId}</h1>
                 <h1 className='flex justify-start text-lg sm:text-xl font-semibold mb-1'>{pokemon.name.fr}</h1>
                 <div className='flex justify-start'>
                   {pokemon.types.map((pokemonType, index) => (
                     <div key={index}>
-                      <h1 className={`text-sm sm:text-l mr-1 h-6 w-16 rounded-sm text-center ${getTypeClass(pokemonType.name)}`}>{pokemonType.name}</h1>
+                      <h1 className={`text-sm sm:text-l mr-1 h-6 w-16 rounded-sm flex justify-center items-center ${getTypeClass(pokemonType.name)}`}>{pokemonType.name}</h1>
                     </div>
                   ))}
                 </div>
@@ -93,7 +94,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-      
       )}
     </main>
   )
