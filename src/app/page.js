@@ -67,7 +67,6 @@ export default function Home() {
   const message = pokemonData === null ? 'Loading' : pokemonData[5];
   console.log(message);
 
-
   return (
     <main>
       <Searchbar />
