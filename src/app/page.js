@@ -69,7 +69,7 @@ export default function Home() {
 
   return (
     <main>
-      <Searchbar />
+      <Searchbar pokemon={pokemonData}/>
       {pokemonData === null ? (
         <div>Chargement du pokedex...</div>
       ) : (
@@ -77,9 +77,9 @@ export default function Home() {
         {pokemonData.map((pokemon, index) => (
           <div key={index} className='flex justify-center py-4 sm:py-8 rounded-lg'>
             <div className={`h-72 w-56 sm:w-72 md:w-96 rounded-md p-3 sm:p-5 pt-0  hover:scale-110 transform transition-transform duration-300`}>
-              <Link href={`/pokemon/${index +1}`}> <Image className='bg-stone-100 rounded-lg' src={pokemon.sprites.regular} alt={pokemon.name.fr} width={500} height={500} /> </Link>
+              <Link href={`/pokemon/${index + 1}`}><Image className='bg-stone-100 rounded-lg' src={pokemon.sprites.regular} alt={pokemon.name.fr} width={500} height={500} /></Link>
               <div className='pl-2'>
-                <h1 className='flex justify-start text-sm sm:text-l mb-2 sm:mb-3 text-gray-600'>no. {pokemon.pokedexId}</h1>
+                <h1 className='flex justify-start text-sm sm:text-l mb-2 sm:mb-3 text-gray-600'>N°. {pokemon.pokedexId}</h1>
                 <h1 className='flex justify-start text-lg sm:text-xl font-semibold mb-1'>{pokemon.name.fr}</h1>
                 <div className='flex justify-start'>
                   {pokemon.types.map((pokemonType, index) => (

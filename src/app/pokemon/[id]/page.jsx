@@ -26,9 +26,13 @@ export default function Pokemon({params}) {
         {Object.keys(pokemon).length === 0 ?  (
             <p>chargement de la page </p>
         ) : (
-            <div className='bg-amber-200'>
+            <div className='bg-green-400-200 flex'>
                 <div>
                     <Image className='bg-stone-200 rounded-lg' src={pokemon.sprites.regular} alt={pokemon.name.fr} width={500} height={500} />
+                </div>
+                <div className='text-2xl'>
+                  <h1 className='font-semibold'>{pokemon.name.fr} <span className='text-gray-600'>N° {pokemon.pokedexId}</span></h1>
+                  <p>{pokemon.category}</p>
                 </div>
             </div>
         )}
