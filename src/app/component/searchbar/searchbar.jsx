@@ -25,7 +25,7 @@ export default function Searchbar({pokemon}) {
         <input className="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text" id="search" placeholder="Pokemon ou N° dans le pokedex..." onChange={handleInputChange}/> 
     </div>
         {filteredPokemon && (
-          <ul className="absolute bg-white rounded-b-lg border border-slate-700 border-t-transparent overflow-hidden max-w-md z-10">
+          <ul className="bg-white rounded-b-lg border border-slate-700 border-t-transparent overflow-hidden z-10">
             {filteredPokemon.map((pokemon, index) => (
               <div key={index} >
                 <Link href={`/pokemon/${pokemon.name.fr}`}><li className="px-4 py-2 hover:bg-gray-200">{pokemon.name.fr}</li></Link>
