@@ -32,7 +32,7 @@ export default function Pokemon({params}) {
             <p>chargement de la page </p>
           ) : (
             <div className='flex justify-center'>
-              <div className='bg-stone-100 bg-opacity-70 border border-black rounded-lg w-full sm:w-12/12 md:w-9/12 flex flex-col sm:flex-row'>
+              <div className='bg-stone-100 bg-opacity-70 border-2 border-slate-500 rounded-lg w-full sm:w-12/12 md:w-9/12 flex flex-col sm:flex-row'>
       
                 <div className='flex items-center sm:w-1/2'>
                   <Image className='rounded-lg' src={pokemon.sprites[pokemonShiny]} alt={pokemon.name.fr} width={500} height={500} />
