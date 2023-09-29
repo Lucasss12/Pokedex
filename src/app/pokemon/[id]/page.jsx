@@ -5,6 +5,7 @@ import Image from 'next/image'
 import getTypeClass from '../../utils/typesClass'
 import etoile from '../../images/etoile.png'
 import Link from 'next/link';
+import Spinner from '@/app/component/spinner/spinner';
 
 export default function Pokemon({params}) {
     const [pokemon, setPokemon] = useState({})
@@ -29,7 +30,7 @@ export default function Pokemon({params}) {
       return (
         <div>
           {Object.keys(pokemon).length === 0 ? (
-            <p>chargement de la page </p>
+            <Spinner/>
           ) : (
             <div className='flex justify-center'>
               <div className='bg-stone-100 bg-opacity-70 border-2 border-slate-500 rounded-lg w-full sm:w-12/12 md:w-9/12 flex flex-col sm:flex-row'>

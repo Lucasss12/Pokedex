@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image'
 import Searchbar from '../app/component/searchbar/searchbar'
+import Spinner from '../app/component/spinner/spinner'
 import Link from 'next/link';
 import getTypeClass from '../app/utils/typesClass'
 
@@ -22,12 +23,11 @@ export default function Home() {
     fetchPokemon()
   }, [])
 
-
   return (
     <main>
       <Searchbar pokemon={pokemonData}/>
       {pokemonData === null ? (
-        <div>Chargement du pokedex...</div>
+       <Spinner />
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
         {pokemonData.map((pokemon, index) => (
