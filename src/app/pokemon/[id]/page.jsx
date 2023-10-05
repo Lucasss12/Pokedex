@@ -33,13 +33,13 @@ export default function Pokemon({params}) {
             <Spinner/>
           ) : (
             <div className='flex justify-center'>
-              <div className='bg-stone-100 bg-opacity-70 border-2 border-slate-500 rounded-lg w-full sm:w-12/12 md:w-/12 lg:w12/12 xl:w-9/12 2xl:w-8/12 flex flex-col sm:flex-row'>
+              <div className='bg-stone-100 bg-opacity-70 border-2 border-slate-500 rounded-lg w-full sm:w-12/12 md:w-/12 lg:w12/12 xl:w-9/12 2xl:w-6/12 flex flex-col sm:flex-row justify-center'>
       
-                <div className='flex items-center justify-center sm:w-1/2'>
+                <div className='flex items-center justify-center'>
                   <Image className='rounded-lg' src={pokemon.sprites[pokemonShiny]} alt={pokemon.name.fr} width={500} height={500} />
                 </div>
       
-                <div className='text-2xl px-4 py-4 sm:px-8 sm:py-4'>
+                <div className='text-2xl p-4 sm:px-8 sm:py-4'>
                   <h1 className='font-semibold mb-4'>{pokemon.name.fr} <span className='text-gray-600'>N° {pokemon.pokedexId}</span></h1>
       
                   <div className='flex justify-start items-center my-3'><p className='mr-2'>Types : </p>
