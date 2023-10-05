@@ -33,9 +33,9 @@ export default function Pokemon({params}) {
             <Spinner/>
           ) : (
             <div className='flex justify-center'>
-              <div className='bg-stone-100 bg-opacity-70 border-2 border-slate-500 rounded-lg w-full sm:w-12/12 md:w-9/12 flex flex-col sm:flex-row'>
+              <div className='bg-stone-100 bg-opacity-70 border-2 border-slate-500 rounded-lg w-full sm:w-12/12 md:w-/12 lg:w12/12 xl:w-9/12 2xl:w-8/12 flex flex-col sm:flex-row'>
       
-                <div className='flex items-center sm:w-1/2'>
+                <div className='flex items-center justify-center sm:w-1/2'>
                   <Image className='rounded-lg' src={pokemon.sprites[pokemonShiny]} alt={pokemon.name.fr} width={500} height={500} />
                 </div>
       
@@ -64,7 +64,7 @@ export default function Pokemon({params}) {
                   </div>
       
                   <div className='flex items-center mt-4'>
-                    <p className='text-xl'>Voir le pokemon en shiny</p>
+                    <p className='text-xl'>Voir le pokemon en shiny :</p>
                     <button onClick={handleShiny}>
                       <Image className='w-12 m-3' src={etoile} alt='etoile'></Image>
                     </button>
@@ -89,5 +89,4 @@ export default function Pokemon({params}) {
           )}
         </div>
       )
-      
 }
