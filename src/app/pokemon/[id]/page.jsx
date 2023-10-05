@@ -33,7 +33,7 @@ export default function Pokemon({params}) {
             <Spinner/>
           ) : (
             <div className='flex justify-center'>
-              <div className='bg-stone-100 bg-opacity-70 border-2 border-slate-500 rounded-lg w-full sm:w-12/12 md:w-/12 lg:w12/12 xl:w-9/12 2xl:w-6/12 flex flex-col sm:flex-row justify-center'>
+              <div className='bg-stone-100 bg-opacity-70 border-4 border-slate-300 rounded-lg w-full sm:w-12/12 md:w-/12 lg:w12/12 xl:w-9/12 2xl:w-6/12 flex flex-col sm:flex-row justify-center'>
       
                 <div className='flex items-center justify-center'>
                   <Image className='rounded-lg' src={pokemon.sprites[pokemonShiny]} alt={pokemon.name.fr} width={500} height={500} />
