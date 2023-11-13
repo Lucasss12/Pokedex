@@ -14,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
-        const response = await axios.get('https://api-pokemon-fr.vercel.app/api/v1/gen/1')
+        const response = await axios.get('https://tyradex.vercel.app/api/v1/gen/1')
         setPokemonData(response.data)
       } catch (error) {
           console.log(error)
